@@ -1,0 +1,8 @@
+.block {
+    display: block;
+}
+
+.error {
+    color: #f00;
+    margin-top: 20px 10px;
+}
