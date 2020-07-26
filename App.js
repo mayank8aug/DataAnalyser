@@ -12,6 +12,8 @@ class App extends React.Component {
     }
 
     fileUploadHandler() {
+        const errorHandler = this.errorHandler;
+        const successHandler = this.successHandler;
         const videoEl = document.getElementById('videoId');
         const file = videoEl.files[0];
         const xhr = new XMLHttpRequest();
@@ -21,13 +23,13 @@ class App extends React.Component {
         xhr.setRequestHeader("Content-Type", "multipart/form-data");
         xhr.onload = function() {
             if (xhr.status != 200) {
-                this.errorHandler()
+                errorHandler();
             } else {
-                this.successHandler(xhr.response);
+                successHandler(xhr.response);
             }
         };
         xhr.onerror = function() {
-            this.errorHandler();
+            errorHandler();
         }
         xhr.send(formData);
     }
