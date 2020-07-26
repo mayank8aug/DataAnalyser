@@ -4,7 +4,9 @@ class App extends React.Component {
     }
 
     render() {
-        <div>App component will render here</div>
+        return (
+            <div>App component will render here</div>
+        );
     }
 }
 
